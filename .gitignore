@@ -1,0 +1,21 @@
+// ==UserScript==
+// @name         sinar2 alert
+// @namespace    https://www.999dice.com/
+// @version      0.1
+// @description  rain dan mega rain
+// @author       modded by Sinar
+// @match        https://www.999dice.com/
+// @include      https://www.999dice.com/
+// @grant        none
+// ==/UserScript==
+var rainalert = {};
+rainalert = new Audio();
+rainalert.src = "http://cd.textfiles.com/10000soundssongs/WAV/ALARM.WAV";
+rainalert.volume = 0.5;
+
+function soundz() {
+    rainalert.play();
+}
+$("#ChatTab").bind("DOMSubtreeModified",function(){
+    if($(this).children(2).children().find('.TextButton').length){ soundz(); }   
+});
