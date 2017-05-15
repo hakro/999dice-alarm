@@ -20,3 +20,25 @@ function soundz() {
 $("#ChatTab").bind("DOMSubtreeModified",function(){
     if($(this).children(2).children().find('.TextButton').length){ soundz(); }   
 });
+
+// ------------------------- AutoBet -------------------------- //
+
+var minBalance = 0.000;
+var maxBalance = 0.0005;
+
+var btnLow = document.getElementsByClassName('BetControlTitle')[14];
+var btnHigh = document.getElementsByClassName('BetControlTitle')[15];
+
+function fire()
+{
+  balance = parseFloat(document.getElementsByClassName('UserBalance')[0].innerHTML);
+  if (balance == 0 || balance < minBalance || balance > maxBalance) return;
+  
+  if (Math.random() > 0.5) {
+    btnLow.click();
+  } else {
+    btnHigh.click();
+  }
+}
+
+window.setInterval(fire, 1000);
