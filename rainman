@@ -8,9 +8,10 @@
 // @include      https://www.999dice.com/
 // @grant        none
 // ==/UserScript==
+
 var rainalert = {};
 rainalert = new Audio();
-rainalert.src = "http://cd.textfiles.com/10000soundssongs/WAV/ALARM.WAV";
+rainalert.src = "http://www.wavsource.com/snds_2017-03-26_2137986549265739/sfx/cuckoo_clock2_x.wav";
 rainalert.volume = 0.5;
 
 function soundz() {
